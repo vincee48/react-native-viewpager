@@ -1,6 +1,6 @@
 'use strict';
 
-var React = require('react-native');
+var React = require('react');
 var {
   Dimensions,
   Text,
@@ -10,7 +10,7 @@ var {
   Animated,
   PropTypes,
   StyleSheet,
-} = React;
+} = require('react-native');
 
 var StaticRenderer = require('react-native/Libraries/Components/StaticRenderer');
 var TimerMixin = require('react-timer-mixin');

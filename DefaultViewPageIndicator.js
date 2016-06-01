@@ -1,6 +1,6 @@
 'use strict';
 
-var React = require('react-native');
+var React = require('react');
 var {
   Dimensions,
   StyleSheet,
@@ -8,7 +8,7 @@ var {
   TouchableOpacity,
   View,
   Animated,
-} = React;
+} = require('react-native');
 
 var deviceWidth = Dimensions.get('window').width;
 var DOT_SIZE = 6;
