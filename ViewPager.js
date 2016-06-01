@@ -39,6 +39,7 @@ var ViewPager = React.createClass({
     locked: PropTypes.bool,
     autoPlay: PropTypes.bool,
     animation: PropTypes.func,
+    numberActiveTouches: PropTypes.number
   },
 
   fling: false,
@@ -55,6 +56,7 @@ var ViewPager = React.createClass({
             tension: 50,
           })
       },
+      numberActiveTouches: 1
     }
   },
 
@@ -92,7 +94,7 @@ var ViewPager = React.createClass({
         if (Math.abs(gestureState.dx) > Math.abs(gestureState.dy)) {
           if (/* (gestureState.moveX <= this.props.edgeHitWidth ||
               gestureState.moveX >= deviceWidth - this.props.edgeHitWidth) && */
-                this.props.locked !== true && !this.fling) {
+                this.props.locked !== true && !this.fling && gestureState.numberActiveTouches === this.props.numberActiveTouches) {
             this.props.hasTouch && this.props.hasTouch(true);
             return true;
           }
